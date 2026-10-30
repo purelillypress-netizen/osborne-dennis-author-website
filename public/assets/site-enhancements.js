@@ -31,6 +31,19 @@
       contactForm.replaceWith(form);
     }
     document.querySelectorAll('a[href="mailto:321stopbullying@gmail.com"]').forEach(link => {link.href='mailto:osbournedennisjrbooks@gmail.com';link.textContent='osbournedennisjrbooks@gmail.com';});
+    const printCard = [...document.querySelectorAll('#shop .merch-card')].find(card => card.textContent.includes('Christopher vs. the Bully'));
+    if(printCard && !printCard.dataset.formatClarified){printCard.dataset.formatClarified='true';printCard.querySelector('small').textContent='Paperback — Coming Soon';}
+    const bookCopy = document.querySelector('.carousel-copy');
+    if(bookCopy?.querySelector('h3')?.textContent.includes('Bully')) {
+      const fmt=bookCopy.querySelector('.book-format');if(fmt && fmt.textContent!=='Paperback — Coming Soon')fmt.textContent='Paperback — Coming Soon';
+      const note=[...bookCopy.children].find(el=>el.tagName==='P' && !el.classList.contains('book-format'));
+      const copy='A story that helps children speak life, show love, and stand against bullying. EPUB $8.99; print edition coming soon.';
+      if(note && note.textContent!==copy)note.textContent=copy;
+    }
+    const shopIntro=document.querySelector('#shop .section-heading > p:last-child');
+    const intro='Explore both Christopher EPUB editions for $8.99 each below. Order the Visit to Heaven paperback from Barnes & Noble; the Bully print edition is coming soon.';
+    if(shopIntro && shopIntro.textContent!==intro)shopIntro.textContent=intro;
+    document.querySelectorAll('.carousel-shelf button span, .about-copy em').forEach(el=>{if(el.textContent.includes('Bully')&&el.textContent.includes('Coming Soon'))el.textContent='Christopher vs. the Bully (EPUB $8.99; print coming soon)';});
     const shop = document.querySelector('#shop');
     if (shop && !document.querySelector('#ebook-shop')) {
       const ebooks=document.createElement('section'); ebooks.id='ebook-shop'; ebooks.className='section';
