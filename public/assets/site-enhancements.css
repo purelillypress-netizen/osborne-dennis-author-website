@@ -70,3 +70,5 @@
 .book-actions .retailer-link { margin-top: 0; color: #fff; }
 .retailer-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
 .product-status { display: block; color: var(--red-dark); font-size: .85rem; font-weight: 800; }
+
+.ebook-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ebook-grid .merch-image{height:320px}.ebook-grid .merch-image img{height:100%;object-fit:contain}.ebook-grid h3{font-size:1.35rem;margin:1rem 0 .5rem}.ebook-instructions{max-width:850px;margin:2rem auto;line-height:1.7}.connect-section input,.connect-section textarea{box-sizing:border-box;width:100%}.connect-section textarea{padding:1rem;border-radius:12px;font:inherit}.connect-section button:disabled{opacity:.65}.connect-section form{display:grid;gap:.8rem}@media(max-width:650px){.ebook-grid{grid-template-columns:1fr}}
