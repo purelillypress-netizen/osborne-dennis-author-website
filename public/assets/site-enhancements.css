@@ -1,0 +1,72 @@
+.merch-card:first-child .merch-image img[src="/christopher-vs-bully-cover.png"] { height: 100%; object-fit: cover; transform: scale(1.14); }
+.merch-card:first-child:hover .merch-image img[src="/christopher-vs-bully-cover.png"] { transform: scale(1.18); }
+.carousel-cover.book-art-1, .carousel-cover.book-art-2 { background: transparent; padding: 8px; }
+.carousel-cover img[src="/christopher-vs-bully-cover.png"], .carousel-cover img[src="/christophers-visit-cover.png"] { width: 100%; max-width: 500px; max-height: 445px; aspect-ratio: 1; object-fit: cover; transform: none; }
+.carousel-cover.book-art-2 img { transform: none; }
+.mission-number img[data-smile-updated="true"] {
+  left: -5%;
+  right: auto;
+  width: 110%;
+  object-position: center 18%;
+}
+.community-photo.community-osborne-outdoors { align-self: start; }
+.community-photo.community-osborne-outdoors img { width: 100%; height: auto; max-height: none; aspect-ratio: 296 / 640; object-fit: contain; object-position: center; background: #eef2e8; }
+.connect-section textarea { box-sizing: border-box; width: 100%; margin: 0 0 18px; border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; resize: vertical; font: inherit; }
+.connect-section textarea:focus, .connect-section input:focus { outline: 3px solid rgb(245 190 48 / 32%); border-color: #b37a00; }
+.portrait-caption strong span { display: block; }
+.portrait-caption strong span + span { margin-top: .18rem; }
+
+/* Keep gallery cards content-height so photos do not leave tall white tails. */
+.community-grid { align-items: start; }
+.community-photo { align-self: start; }
+.community-photo:has(img[src="/community-program-group.jpg"]) {
+  align-self: center;
+}
+.community-photo img,
+.community-photo.community-osborne-outdoors img {
+  height: auto;
+}
+.community-photo.community-blue-suit img {
+  aspect-ratio: 296 / 410;
+  height: auto;
+  max-height: none;
+  object-fit: cover;
+  object-position: center top;
+}
+.community-logo {
+  background: transparent;
+  display: grid;
+  place-items: center;
+  grid-column: span 2;
+  padding: clamp(1rem, 2vw, 2rem);
+}
+.community-logo img {
+  width: min(100%, 540px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 20px 45px rgb(3 25 48 / 28%);
+}
+
+@media (width <= 580px) {
+  .brand strong,
+  .footer-brand strong {
+    white-space: nowrap;
+  }
+
+  .brand strong { font-size: clamp(12px, 4vw, 15px); }
+  .about-copy h2 {
+    white-space: nowrap;
+    font-size: clamp(25px, 8.5vw, 38px);
+  }
+
+  .community-logo {
+    grid-column: auto;
+    padding: 1.25rem 1rem 0;
+  }
+
+}
+.retailer-link { display: inline-block; margin-top: 1rem; border-radius: 999px; padding: .75rem 1rem; background: #162a4b; color: #fff; font: inherit; font-weight: 800; text-decoration: none; }
+.book-actions .retailer-link { margin-top: 0; color: #fff; }
+.retailer-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+.product-status { display: block; color: var(--red-dark); font-size: .85rem; font-weight: 800; }

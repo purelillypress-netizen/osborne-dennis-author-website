@@ -2,6 +2,8 @@
 
 Production: https://christophersadventures.com
 
-This repository recovers the deployed static site, including its compiled JavaScript, styles and public images. The original editable React project was not available in the deployment. Netlify should publish `public` with no build command.
+Recovered from the live production deployment on October 30, 2026. This includes the compiled JavaScript, styles, pages and public images. The original editable React source was not present in the deployment.
 
-Paid EPUB checkout and 24-hour download delivery are pending implementation; no payment credentials or EPUB files are committed here.
+Netlify publishes `public` with no build command. Edit the recovered scripts carefully; a later migration can restore an editable component project.
+
+Paid EPUB checkout and secure 24-hour download delivery are pending implementation. Do not commit payment secrets or the paid EPUB files to this public repository.

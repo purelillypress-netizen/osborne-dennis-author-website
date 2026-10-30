@@ -1,0 +1,4 @@
+/* The author portrait already includes both books; suppress the redundant cover overlay. */
+.hero-book-cover {
+  display: none;
+}
