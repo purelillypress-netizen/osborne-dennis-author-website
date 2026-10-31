@@ -41,27 +41,13 @@
     if(bookCopy?.querySelector('h3')?.textContent.includes('Bully')) {
       const fmt=bookCopy.querySelector('.book-format');if(fmt && fmt.textContent!=='Paperback — Coming Soon')fmt.textContent='Paperback — Coming Soon';
       const note=[...bookCopy.children].find(el=>el.tagName==='P' && !el.classList.contains('book-format'));
-      const copy='A story that helps children speak life, show love, and stand against bullying. Kindle eBook and print edition coming soon.';
+      const copy='A story that helps children speak life, show love, and stand against bullying. Paperback edition coming soon.';
       if(note && note.textContent!==copy)note.textContent=copy;
     }
     const shopIntro=document.querySelector('#shop .section-heading > p:last-child');
-    const intro='Kindle eBook editions of both Christopher stories are coming soon. Order the Visit to Heaven paperback from Barnes & Noble; the Bully print edition is coming soon.';
+    const intro='Order Christopher’s Visit to Heaven in paperback for $18.99 from Barnes & Noble. Christopher vs. the Bully paperback is coming soon.';
     if(shopIntro && shopIntro.textContent!==intro)shopIntro.textContent=intro;
-    document.querySelectorAll('.carousel-shelf button span, .about-copy em').forEach(el=>{if(el.textContent.includes('Bully')&&el.textContent.includes('Coming Soon')){const label='Christopher vs. the Bully (Kindle eBook and print coming soon)';if(el.textContent!==label)el.textContent=label;};});
-    const shop = document.querySelector('#shop');
-    if (shop && !document.querySelector('#ebook-shop')) {
-      const ebooks=document.createElement('section'); ebooks.id='ebook-shop'; ebooks.className='section';
-      ebooks.innerHTML=`<div class="section-heading"><p class="eyebrow">Digital editions</p><h2>Get the eBook</h2><p>Both Christopher stories are coming to Kindle. Planned price: $8.99 each. Printed books are sold separately.</p></div>
-      <div class="merch-grid ebook-grid">
-      <article class="merch-card"><div class="merch-image"><img src="/christophers-visit-cover.png" alt="Christopher’s Visit to Heaven cover"></div><small>Get the eBook</small><h3>Christopher’s Visit to Heaven</h3><p><strong>$8.99</strong></p><span class="retailer-link" aria-disabled="true">Kindle eBook — Coming Soon</span></article>
-      <article class="merch-card"><div class="merch-image"><img src="/christopher-vs-bully-cover.png" alt="Christopher vs. the Bully cover"></div><small>Get the eBook</small><h3>Christopher vs. the Bully</h3><p><strong>$8.99</strong></p><span class="retailer-link" aria-disabled="true">Kindle eBook — Coming Soon</span></article></div>
-      <div class="ebook-instructions"><h3>Read with Kindle</h3><p>Purchase links will be added here when the Kindle editions are published. You will be able to read them in a compatible Kindle device or the Kindle app.</p></div>`;
-      shop.after(ebooks);
-    }
-    const carousel = document.querySelector('.carousel-copy');
-    if(carousel && carousel.querySelector('h3')?.textContent.includes('Visit to Heaven') && !carousel.querySelector('[data-paperback-price]')) {const price=document.createElement('p');price.dataset.paperbackPrice='true';price.textContent='Paperback — $18.99 at Barnes & Noble';carousel.append(price);}
-    if(carousel && !carousel.querySelector('[data-ebook-link]')) {const a=document.createElement('a');a.href='#ebook-shop';a.dataset.ebookLink='true';a.className='retailer-link';a.textContent='Kindle eBooks — Coming Soon';carousel.append(a);}
-
+    document.querySelectorAll('.carousel-shelf button span, .about-copy em').forEach(el=>{if(el.textContent.includes('Bully')&&el.textContent.includes('Coming Soon')){const label='Christopher vs. the Bully (paperback coming soon)';if(el.textContent!==label)el.textContent=label;};});
     const speaker = document.querySelector(".mission-number img");
     if (speaker && !speaker.dataset.smileUpdated) {
       speaker.src = "/community-speaker.jpg";
@@ -80,7 +66,7 @@
 
     const featuredBooks = document.querySelector(".portrait-caption strong");
     if (featuredBooks && !featuredBooks.dataset.titlesStacked) {
-      featuredBooks.innerHTML = `<span>Christopher’s Visit to Heaven</span><span>Christopher vs. the Bully — Kindle eBook and print coming soon</span>`;
+      featuredBooks.innerHTML = `<span>Christopher’s Visit to Heaven</span><span>Christopher vs. the Bully — paperback coming soon</span>`;
       featuredBooks.dataset.titlesStacked = "true";
     }
 
