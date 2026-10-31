@@ -32,6 +32,11 @@
     }
     const printCard = [...document.querySelectorAll('#shop .merch-card')].find(card => card.textContent.includes('Christopher vs. the Bully'));
     if(printCard && !printCard.dataset.formatClarified){printCard.dataset.formatClarified='true';printCard.querySelector('small').textContent='Paperback — Coming Soon';}
+    const heavenPrint = [...document.querySelectorAll('#shop .merch-card')].find(card => card.textContent.includes('Christopher’s Visit to Heaven'));
+    if(heavenPrint && !heavenPrint.querySelector('[data-paperback-price]')) {
+      const price=document.createElement('p');price.dataset.paperbackPrice='true';price.innerHTML='<strong>$18.99</strong><br><small>Paperback · Barnes &amp; Noble price</small>';
+      const link=heavenPrint.querySelector('a');if(link)heavenPrint.insertBefore(price,link);else heavenPrint.append(price);
+    }
     const bookCopy = document.querySelector('.carousel-copy');
     if(bookCopy?.querySelector('h3')?.textContent.includes('Bully')) {
       const fmt=bookCopy.querySelector('.book-format');if(fmt && fmt.textContent!=='Paperback — Coming Soon')fmt.textContent='Paperback — Coming Soon';
@@ -46,14 +51,15 @@
     const shop = document.querySelector('#shop');
     if (shop && !document.querySelector('#ebook-shop')) {
       const ebooks=document.createElement('section'); ebooks.id='ebook-shop'; ebooks.className='section';
-      ebooks.innerHTML=`<div class="section-heading"><p class="eyebrow">Digital editions</p><h2>Kindle eBooks — Coming Soon</h2><p>Both Christopher stories are coming to Kindle. Planned price: $8.99 each. Printed books are sold separately.</p></div>
+      ebooks.innerHTML=`<div class="section-heading"><p class="eyebrow">Digital editions</p><h2>Get the eBook</h2><p>Both Christopher stories are coming to Kindle. Planned price: $8.99 each. Printed books are sold separately.</p></div>
       <div class="merch-grid ebook-grid">
-      <article class="merch-card"><div class="merch-image"><img src="/christophers-visit-cover.png" alt="Christopher’s Visit to Heaven cover"></div><small>Kindle eBook</small><h3>Christopher’s Visit to Heaven</h3><p><strong>$8.99</strong></p><span class="retailer-link" aria-disabled="true">Kindle eBook — Coming Soon</span></article>
-      <article class="merch-card"><div class="merch-image"><img src="/christopher-vs-bully-cover.png" alt="Christopher vs. the Bully cover"></div><small>Kindle eBook</small><h3>Christopher vs. the Bully</h3><p><strong>$8.99</strong></p><p>Print edition coming soon.</p><span class="retailer-link" aria-disabled="true">Kindle eBook — Coming Soon</span></article></div>
+      <article class="merch-card"><div class="merch-image"><img src="/christophers-visit-cover.png" alt="Christopher’s Visit to Heaven cover"></div><small>Get the eBook</small><h3>Christopher’s Visit to Heaven</h3><p><strong>$8.99</strong></p><span class="retailer-link" aria-disabled="true">Kindle eBook — Coming Soon</span></article>
+      <article class="merch-card"><div class="merch-image"><img src="/christopher-vs-bully-cover.png" alt="Christopher vs. the Bully cover"></div><small>Get the eBook</small><h3>Christopher vs. the Bully</h3><p><strong>$8.99</strong></p><span class="retailer-link" aria-disabled="true">Kindle eBook — Coming Soon</span></article></div>
       <div class="ebook-instructions"><h3>Read with Kindle</h3><p>Purchase links will be added here when the Kindle editions are published. You will be able to read them in a compatible Kindle device or the Kindle app.</p></div>`;
       shop.after(ebooks);
     }
     const carousel = document.querySelector('.carousel-copy');
+    if(carousel && carousel.querySelector('h3')?.textContent.includes('Visit to Heaven') && !carousel.querySelector('[data-paperback-price]')) {const price=document.createElement('p');price.dataset.paperbackPrice='true';price.textContent='Paperback — $18.99 at Barnes & Noble';carousel.append(price);}
     if(carousel && !carousel.querySelector('[data-ebook-link]')) {const a=document.createElement('a');a.href='#ebook-shop';a.dataset.ebookLink='true';a.className='retailer-link';a.textContent='Kindle eBooks — Coming Soon';carousel.append(a);}
 
     const speaker = document.querySelector(".mission-number img");
