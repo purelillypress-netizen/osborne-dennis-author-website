@@ -25,12 +25,11 @@
           const response = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(form)).toString()});
           if (!response.ok) throw new Error('Submission failed');
           form.reset(); note.textContent = 'Thank you! Your message has been received.';
-        } catch { note.textContent = 'Your message could not be submitted. Please try again, or email 321bullying@gmail.com.'; }
+        } catch { note.textContent = 'Your message could not be submitted. Please try again, or email 321stopbullying@gmail.com.'; }
         finally {button.disabled=false; button.textContent='Send message';}
       });
       contactForm.replaceWith(form);
     }
-    document.querySelectorAll('a[href="mailto:321stopbullying@gmail.com"]').forEach(link => {link.href='mailto:321bullying@gmail.com';link.textContent='321bullying@gmail.com';});
     const printCard = [...document.querySelectorAll('#shop .merch-card')].find(card => card.textContent.includes('Christopher vs. the Bully'));
     if(printCard && !printCard.dataset.formatClarified){printCard.dataset.formatClarified='true';printCard.querySelector('small').textContent='Paperback — Coming Soon';}
     const bookCopy = document.querySelector('.carousel-copy');
