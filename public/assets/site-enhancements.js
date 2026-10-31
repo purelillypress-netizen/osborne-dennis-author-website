@@ -2,6 +2,12 @@
   function enhanceShop() {
     document.querySelectorAll('a[href="/admin"]').forEach(link => link.remove());
 
+    const rotatingBooks=document.querySelector('#books .book-carousel');
+    if(rotatingBooks && !document.querySelector('#large-book-covers')) {
+      const covers=document.createElement('div');covers.id='large-book-covers';covers.className='large-book-covers';
+      covers.innerHTML=`<article class="large-book-card"><img src="/christophers-visit-cover.png" alt="Christopher’s Visit to Heaven paperback cover"><p class="book-format">Paperback · $18.99</p><h3>Christopher’s Visit to Heaven</h3><p>A gentle story of grief, faith, hope, and the promise that love does not end with goodbye.</p><a class="retailer-link" href="https://www.barnesandnoble.com/w/christophers-visit-to-heaven-osborne-e-dennis-jr/1151123678?ean=9781965050170" target="_blank" rel="noopener noreferrer">Buy at Barnes &amp; Noble</a></article><article class="large-book-card"><img src="/christopher-vs-bully-cover.png" alt="Christopher vs. the Bully paperback cover"><p class="book-format">Paperback · Coming Soon</p><h3>Christopher vs. the Bully</h3><p>A story that helps children speak life, show love, and stand against bullying.</p><span class="product-status">Coming Soon</span></article>`;
+      rotatingBooks.hidden=true;rotatingBooks.after(covers);
+    }
     const contactForm = document.querySelector('.connect-section form:not([data-contact-ready])');
     if (contactForm) {
       const form = document.createElement('form');
